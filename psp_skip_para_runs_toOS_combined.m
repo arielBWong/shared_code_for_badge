@@ -30,7 +30,7 @@ prob_str = {'DS1(10, 1)', 'DS2(10, 1)', 'DS3(10, 1)', 'DS1(10, -1)', 'DS2(10, -1
 [onerun_parameters, num_runs] = generate_internalComparison_parameter1_list(prob_str, 21, trg_size, gen_gap, strategy1, strategy2, strategy3, batch_id, UL_termination);
 
 tic;
-for i = 1:num_runs
+parfor i = 1:num_runs
     % arguments: prob_str, strategy, seed, UL termination_criterion(1-IGD, 2-HV), internal_comparison
     generation_assisted_BLMO_pspr3('prob_str', onerun_parameters(i).problem_str, ...
         'strategy', onerun_parameters(i).strategy, ...
